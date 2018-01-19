@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.views.generic import TemplateView
 from hellow_world_app.views import HomeView
+from hellow_world_app.views import RockList
 
 
 urlpatterns = [
@@ -25,5 +26,6 @@ urlpatterns = [
     path('home/', HomeView.as_view(template_name='index.html'), name='home'),
     path('about/', TemplateView.as_view(template_name='about.html'), name='about'),
     path('contact/', TemplateView.as_view(template_name='contact.html'), name='contact'),
+    path('rocks/rock_detail/', RockList.as_view()),
 ]
 
