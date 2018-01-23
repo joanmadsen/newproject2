@@ -20,3 +20,23 @@ class HomeView(TemplateView):
 
 class RockList(ListView):
     model = Rock
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = {
+            'rock': Rock.objects.all().order_by('?'),
+        }
+        return context
+
+    def get_template_names(self):
+        return ["rock_list.html"]
+
+class RockDetail(TemplateView):
+    template_name = 'rocks/rock_detail.html'
+
+    def get(self, request, *args, **kwargs):
+        context = {
+            'rock': Rock.objects.get(id=kwargs['id'])
+        }
+        return self.render_to_response(context)
+
+

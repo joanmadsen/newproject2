@@ -1,0 +1,12 @@
+{% block title %}
+    Rock List
+{% endblock title %}
+
+{% block content %}
+    <ul>
+        {% for r in rock %}
+
+        <a href="{% url 'rock_detail' id=r.id %}">{{r.name}}</a>
+        {% endfor %}
+    </ul>
+{% endblock content %}

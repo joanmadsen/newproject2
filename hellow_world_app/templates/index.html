@@ -9,7 +9,9 @@
        <ul>
               {% for r in rock %}
                      {{r}}
-              <li><a href="{% url 'rocks/rock_detail' %}">{{ rock.name }}</a></li>
+              <li><a href="">
+                     {{ r.name }}
+              </a></li>
               {% endfor %}
        </ul>
        <link rel="stylesheet" href="{% static 'css/style.css' %}" />

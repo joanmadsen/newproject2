@@ -1,17 +1,14 @@
-{% extends 'base.html' %}
-{% load staticfiles %}
-
 {% block title %}
-       {{ rock.name }} - {{ block.super }}
+              {{rock.name}}
 {% endblock title %}
 
 {% block content %}
-       <h1>{{ rock.name }}</h1>
-       <p>{{ rock.description }}</p>
-       <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-       <img src="{% static 'images/meaganfoxy.jpg' %}" alt=""/>
-{% endblock content %}
 
+
+           {{rock.description}}
+
+
+{% endblock content %}
 
 
 
