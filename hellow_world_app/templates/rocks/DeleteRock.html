@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+{{ rock.name }} :: {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+<fieldset>
+    <legend>Delete Rock</legend>
+    <form action="" method="post">
+          {% csrf_token %}
+          <p>Are you sure you want to delete "{{ rock }}"?</p>
+          <input type="submit" value="Confirm"/>
+    </form>
+</fieldset>
+
+{% endblock content %}

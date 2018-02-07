@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+{{ rock.name }} :: {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+<fieldset>
+    <legend>Update Rock</legend>
+    <form action="" method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <input type="submit" value="Update"/>
+    </form>
+</fieldset>
+
+{% endblock content %}

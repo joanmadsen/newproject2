@@ -20,6 +20,8 @@ from hellow_world_app.views import HomeView
 from hellow_world_app.views import RockList
 from hellow_world_app.views import RockDetail
 from hellow_world_app.views import CreateRock
+from hellow_world_app.views import UpdateRock
+from hellow_world_app.views import DeleteRock
 
 
 urlpatterns = [
@@ -31,5 +33,7 @@ urlpatterns = [
     path('rock_list/', RockList.as_view(),name='rocks'),
     path('rock_detail/<int:id>', RockDetail.as_view(), name='rock_detail'),
     path('rocks/CreateRock', CreateRock.as_view(), name='create_rock'),
+    path('rock_update/<int:pk>', UpdateRock.as_view(), name='update_rock'),
+    path('rocks/<int:pk>', DeleteRock.as_view(), name='delete_rock')
 ]
 

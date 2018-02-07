@@ -2,11 +2,12 @@
 from __future__ import unicode_literals
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
 from hellow_world_app.models import Rock
 from django.views.generic.list import ListView
 from hellow_world_app.forms import CreateRockForm
+from django.urls import reverse_lazy
 
 
 class HomeView(TemplateView):
@@ -48,4 +49,15 @@ class CreateRock(CreateView):
     template_name = 'rocks/CreateRock.html'
     model = Rock
     fields = ['name', 'description', 'slug']
+
+class UpdateRock(UpdateView):
+    template_name = 'rocks/UpdateRock.html'
+    model = Rock
+    fields = ['name', 'description', 'slug']
+
+class DeleteRock(DeleteView):
+    template_name = 'rocks/DeleteRock.html'
+    model = Rock
+    success_url = reverse_lazy('rocks')
+
 
