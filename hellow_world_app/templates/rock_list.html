@@ -1,9 +1,22 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
 {% block title %}
     Rock List
 {% endblock title %}
 
+
+
 {% block content %}
+
+    {% block createlink %}
+        <ul>
+             <li><a href="{% url 'create_rock' %}">Create Rock</a></li>
+        </ul>
+    {% endblock createlink %}
     <ul>
+
+
         {% for r in rock %}
 
         <a href="{% url 'rock_detail' id=r.id %}">{{r.name}}</a>

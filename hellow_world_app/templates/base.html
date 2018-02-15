@@ -5,7 +5,7 @@
 <head>
     <title>
         {% block title %}
-        My Hello Web App Project
+        Rock App
         {% endblock title %}
     </title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
@@ -13,12 +13,13 @@
 </head>
 <body>
 <header>
-    <h1>Hello Web App</h1>
+    <h1>Joan's Groundbreaking Rock Website</h1>
     <nav>
         <ul>
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'rocks' %}">Rock List</a></li>
         </ul>
     </nav>
 </header>

@@ -6,14 +6,7 @@
 {% endblock title %}
 
 {% block content %}
-       <ul>
-              {% for r in rock %}
-                     {{r}}
-              <li><a href="">
-                     {{ r.name }}
-              </a></li>
-              {% endfor %}
-       </ul>
+
        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
        <img src="{% static 'images/meaganfoxy.jpg' %}" alt=""/>
 {% endblock content %}

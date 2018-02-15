@@ -1,15 +1,27 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load static %}
 
 
 {% block title %}
-              {{rock.name}}
+{{rock.name}}
 {% endblock title %}
 
 {% block content %}
 
+<nav>
+    <ul>
+        <li><a href="{% url 'create_rock' %}">Create Rock</a></li>
+        <li><a href="{% url 'update_rock' pk=rock.id %}" class="btn btn-sm btn-primary">Update</a>
+        <li><a href="{% url 'delete_rock' pk=rock.id %}" class="btn btn-sm btn-primary">Delete</a></li>
+    </ul>
+</nav>
 
-           {{rock.description}}
+<h1>{{rock.name}}</h1>
+
+
+{{rock.description}}
+
 
 {% endblock content %}
 
